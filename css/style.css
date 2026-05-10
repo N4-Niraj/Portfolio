@@ -2,42 +2,65 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 body{
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background: radial-gradient(circle, #0D1C2D, #051424);
+    color: #b3afaf;
+    
 }
 nav{
-    background-color: #494646;
+    
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px;
+    border: #333 solid 1px bottom;
 }
 .nav_buttons_container{
     display: flex;
     gap: 20px;
 }
 .nav_buttons{
-    background-color: #f4f4f4;
+    background-color: #0D1C2D;
     color: #333;
     padding: 5px 15px;
     border: none;
     border-radius: 5px;
 }
 .nav_buttons:hover{
-    background-color: #e0e0e0;
+    color:#1e59b18f
     cursor: pointer;
     transform: translateY(0.5px);
 }
+.contact{
+    background-color: 0D1C2D;
+
+}
 footer{
-    background-color: #5e5c5c;
+    
     color: #f4f4f4;
     text-align: center;
     padding: 20px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+.main_nav_text{
+    font-size: 24px;
+    font-weight: bold;
+}
+.main_nav_text.h1{
+    font-size: 1em;
+    
+    
+}
+#home{
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 100px;
+    margin: auto;
+    
 }
