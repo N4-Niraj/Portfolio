@@ -10,6 +10,34 @@ body{
     color: #b3afaf;
     
 }
+.fa-brands{
+    
+    color: #ecf5ff;
+    font-size: 19px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.fa-brands:hover {
+    text-shadow: 0 0 20px #3c85f1af;
+}
+
+.social_icons{
+    display: flex;
+    align-items: right;
+    margin-left: 0px;
+    gap: 10px;
+}
+
+
+.nav_separator {
+  margin: 0; 
+  color: rgba(255, 255, 255, 0.5);
+  cursor: default;
+  
+}
+
+
 nav{
     
     display: flex;
@@ -17,50 +45,205 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px;
-    border: #333 solid 1px bottom;
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid white;
+    border-radius: 0px 0px 30px 30px;
+    max-width: 720px;
+    margin:  auto;
+    font-size: 18px;
+
+}
+.nav_right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 .nav_buttons_container{
     display: flex;
-    gap: 20px;
+    gap: 10px;
+    
+}
+.main_nav_text{
+    font-size: 24px;
+    font-weight: bold;
+    cursor: default;
 }
 .nav_buttons{
-    background-color: #0D1C2D;
-    color: #333;
-    padding: 5px 15px;
+    background-color: #ecf5ff;
+    color: #000000;
+    padding: 8px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+
 }
 .nav_buttons:hover{
-    color:#1e59b18f
+    color:#1e59b18f;
     cursor: pointer;
     transform: translateY(0.5px);
 }
-.contact{
-    background-color: 0D1C2D;
 
+
+#home{  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    margin-top: 20px;
 }
+.introo{
+    align-items: center;
+    text-align: center;
+    padding: 0px 80px 30px 80px;
+}
+.intro_text_image{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 40px 40px ;
+    padding-bottom: 5px;
+}
+.status{
+    background-color: rgba(0, 56, 56, 0.377);
+    border: #012d3f solid 1.5px;
+    padding: 15px 30px 15px 30px;
+    border-radius: 80px;
+}
+.status p{
+    color: #ecf5ff;
+    font-size: 18px;
+}
+.status:hover{
+    transition: all 0.4s ease;
+    background-color: rgba(0, 56, 56, 0.577);
+    border-color: #012d3f;
+}
+
+.about_section{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 10px ;
+}
+.about_section h2{
+    color: #ecf5ff;
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 1px;
+}
+.profile_image{
+    border: #002331 solid 2px;
+    background-color: #ecf5ff;
+    width: 180px;
+    border-radius: 50%;
+    margin-bottom: 20px;    
+}
+.profile_image:hover{
+    transition: all 0.4s ease;
+    border-color: #3672ccaf;
+    box-shadow: 0 0 75px #3c85f1af;
+}
+.intro_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+}
+.introtext{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: #b3afaf;
+    font-size: 20px;
+    line-height: 1.2;
+}
+.introtext h2{
+    color: #ecf5ff;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.introtext h2:hover{
+    
+    transition: all 0.4s ease;
+    color: #3672ccaf;
+    
+    
+}
+.introtext p:hover{
+    
+    transition: all 0.4s ease;
+    color: #1a61caaf;
+    
+    
+    
+}
+#projects{
+    
+}
+#projects{
+    padding: 40px 80px;
+    text-align: left;
+    border: #002331 solid 1px;
+    max-width: 1100px;
+    margin: auto;
+}
+#skills{
+    
+    padding: 40px 80px;
+    text-align: left;
+    border: #002331 solid 1px;
+    max-width: 1100px;
+    margin: auto;
+} 
+
+#projects h3, #skills h4{
+    color: #ecf5ff;
+    font-size: 28px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.projects_grid{
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.skills_grid{
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    gap: 5px;
+}
+.skills_card:hover{
+    
+}
+
+
 footer{
     
     color: #f4f4f4;
     text-align: center;
     padding: 20px 0;
-    position: fixed;
     width: 100%;
     bottom: 0;
+    border-top: #7bbbff solid 1px;
 }
 .main_nav_text{
     font-size: 24px;
     font-weight: bold;
 }
-.main_nav_text.h1{
-    font-size: 1em;
-    
-    
-}
-#home{
-    margin-left: 400px;
-    margin-right: 400px;
-    margin-top: 100px;
-    margin: auto;
-    
-}
+
+
