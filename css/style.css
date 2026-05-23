@@ -27,7 +27,9 @@ body{
 
 .social_icons{
     display: flex;
-    align-items: right;
+    position: absolute;
+    right: 25px;
+    align-items: center;
     margin-left: 0px;
     gap: 10px;
 }
@@ -60,21 +62,44 @@ nav{
     background: radial-gradient(circle, #0D1C2D, #051424);
 }
 .nav_right {
-
+    
     display: flex;
     align-items: center;
     gap: 15px;
 }
 .nav_buttons_container{
     display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
     
     
 }
-.main_nav_text{
+.contact {
+    color: #ecf5ff;
+    font-size: 15px;
+    font-weight: small;
+}
+.contact button{
+    background-color: #051424;
+    color: #ffffff;
+    padding: 8px 15px;
+    border: 1px solid #ecf5ff94;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.main_nav_text a{
     font-size: 24px;
     font-weight: bold;
-    cursor: default;
+    background: transparent;
+    border: none;
+    color: #ecf5ff;
+    
+}
+.main_nav_text a:hover{
+    text-shadow: 0 0 25px #3c84f185;
 }
 .nav_buttons{
     background-color: #ecf5ff;
