@@ -313,10 +313,13 @@ nav.scrolled {
     align-items: flex-start;
     text-align: left;
     justify-content: center;
-    padding: 60px 20px;
+    padding: 140px 20px 140px 20px;
+    
     gap: 20px;
     width: 800px;
+    margin-top: 20px;
     margin: 0 auto;
+    
 }
 .aboutTitle {
     
