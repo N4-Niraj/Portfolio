@@ -313,7 +313,7 @@ nav.scrolled {
     align-items: flex-start;
     text-align: left;
     justify-content: center;
-    padding: 140px 20px 140px 20px;
+    padding: 100px 20px 100px 20px;
     
     gap: 20px;
     width: 800px;
@@ -459,7 +459,20 @@ nav.scrolled {
     border-color: #3c85f1;
     box-shadow: 0 0 15px rgba(60, 133, 241, 0.3);
 }
-
+#contactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 100px 20px 100px 20px;
+    
+    gap: 20px;
+    width: 800px;
+    margin-top: 20px;
+    margin: 0 auto;
+    
+}
 
 footer {
 
