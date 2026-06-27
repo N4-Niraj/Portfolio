@@ -1,40 +1,24 @@
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const target = document.querySelector(this.getAttribute("href"));
-
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  });
-});
 const nav = document.querySelector('nav');
 
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 0) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 0);
 });
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
 
-    const target = document.querySelector(this.getAttribute("href"));
-    
-    if (target) {
-      const navHeight = document.querySelector('nav').offsetHeight;
-      const targetPosition = target.offsetTop - navHeight;
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
-    }
-  });
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+        e.preventDefault();
+
+        const target = document.querySelector(
+            anchor.getAttribute('href')
+        );
+
+        if (target) {
+            const navHeight = nav.offsetHeight;
+
+            window.scrollTo({
+                top: target.offsetTop - navHeight,
+                behavior: 'smooth'
+            });
+        }
+    });
 });

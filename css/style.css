@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     text-decoration: none;
-    scroll-behavior: smooth;
+    
 
 }
 
@@ -379,8 +379,8 @@ nav.scrolled {
 
 .project_card:hover {
     transform: translateY(-8px);
-    border-color: rgba(0, 208, 132, 0.4);
-    box-shadow: 0 15px 50px rgba(60, 133, 241, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 50px rgba(255, 255, 255, 0.514);
 }
 
 .project_image {
@@ -392,9 +392,7 @@ nav.scrolled {
     transition: all 0.3s ease;
 }
 
-.project_card:hover .project_image {
-    filter: brightness(1.1);
-}
+
 
 .project_content {
     padding: 20px;
@@ -434,36 +432,36 @@ nav.scrolled {
     font-size: 13px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 208, 132, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .btn-github {
-    color: #00d084;
-    background-color: rgba(0, 208, 132, 0.1);
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .btn-github:hover {
-    background-color: rgba(0, 208, 132, 0.2);
-    border-color: #00d084;
-    box-shadow: 0 0 15px rgba(0, 208, 132, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .btn-live {
-    color: #3c85f1;
-    background-color: rgba(60, 133, 241, 0.1);
-    border-color: rgba(60, 133, 241, 0.3);
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .btn-live:hover {
-    background-color: rgba(60, 133, 241, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     border-color: #ffffff75;
     box-shadow: 0 0 15px rgba(60, 133, 241, 0.3);
 }
 #guestBook{
     display:flex;
-    align-items:flex-start;
+    align-items:center;
     justify-content:center;
-    gap:60px;
+    gap:50px;
     padding:100px 20px;
     max-width:1000px;
     margin:0 auto;
@@ -471,13 +469,21 @@ nav.scrolled {
 
 .guestbook-text{
     max-width:380px;
-    display:flex;
-    flex-direction:column;
-    align-items:left;
-    justify-content:center;
-    text-align:left;
-}
 
+}
+    .guestbook-form button{
+    align-self:flex-end;
+
+    padding:10px 18px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#00000071;
+    color:rgb(255, 255, 255);
+
+    cursor:pointer;
+}
 #guestBook h4{
     font-size:28px;
     color:#ecf5ff;
