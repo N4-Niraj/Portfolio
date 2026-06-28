@@ -83,6 +83,7 @@ form.addEventListener("submit", function (e) {
     });
 
 });
+
 document.querySelector(".profile_image")
 .addEventListener("contextmenu", e => {
     e.preventDefault();

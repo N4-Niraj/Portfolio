@@ -626,3 +626,10 @@ footer {
 #form-status.error{
     color:#ff4d4d;
 }
+html {
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
