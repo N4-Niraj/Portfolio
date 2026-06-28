@@ -1,3 +1,5 @@
+
+
 const nav = document.querySelector('nav');
 
 window.addEventListener('scroll', () => {
@@ -21,4 +23,63 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+emailjs.init("BH1twCRQnrjL0wcXV");
+
+const form = document.getElementById("guestbook-form");
+const status = document.getElementById("form-status");
+const button = form.querySelector("button");
+
+form.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+
+    emailjs.sendForm(
+        "service_72u2ys3",
+        "template_yzge7vi",
+        this
+    )
+
+    .then(() => {
+
+        status.textContent =
+            "Message sent, Thanks for stopping by!";
+
+        status.className = "success show";
+
+        form.reset();
+
+        button.disabled = false;
+        button.textContent = "Send";
+
+        setTimeout(() => {
+
+            status.classList.remove("show");
+
+        }, 3000);
+
+    })
+
+    .catch(() => {
+
+        status.textContent =
+            "Failed to send message.";
+
+        status.className = "error show";
+
+        button.disabled = false;
+        button.textContent = "Send";
+
+        setTimeout(() => {
+
+            status.classList.remove("show");
+
+        }, 3000);
+
+    });
+
 });

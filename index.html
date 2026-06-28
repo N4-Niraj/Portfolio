@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script defer src="script.js"></script>
+    
+    
     
 </head>
 
@@ -188,11 +188,13 @@
         </p>
     </div>
 
-    <form class="guestbook-form">
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <textarea placeholder="Your message"></textarea>
-        <button>Send</button>
+    <form class="guestbook-form" id="guestbook-form">
+        <input
+        type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="message" placeholder="Your message"></textarea>
+        <button>Submit</button>
+        <p id="form-status"></p>
     </form>
 
 </section>
@@ -207,7 +209,8 @@
 
     </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>

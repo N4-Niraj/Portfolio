@@ -1,3 +1,22 @@
+:root{
+
+--heading-size:28px;
+--subheading-size:18px;
+--body-size:16px;
+--heading-color:#ecf5ff;
+--subheading-color:#eeeeee;
+--paragraph-color:#ecf5ff;
+--text-color:#e8e8e8f5;
+--section-gap:20px;
+--section-padding:100px;
+--card-radius:16px;
+--border-color:rgba(255, 255, 255, 0.475);
+--card-bg:rgba(255, 255, 255, 0.092);
+--card-hover-bg:rgba(255, 255, 255, 0.16);
+--button-bg:rgba(255, 255, 255, 0.093);
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -22,9 +41,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    gap: var(--section-gap);
+    padding: var(--section-padding);
     margin: 0 auto;
-    background: rgba(80, 63, 63, 0.696);
+    background: var(--card-bg);
 }
 #quick_info {
     margin-top: 70px;
@@ -80,17 +100,13 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 15px 0px 15px 0px;
-
     color: rgb(255, 255, 255);
-
     width: 100%;
-    
     margin: auto;
     font-size: 18px;
     position: sticky;
     top: 0;
     z-index: 1000;
-  
     backdrop-filter: blur(10px);
 
 }
@@ -99,23 +115,19 @@ nav.scrolled {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.nav_buttons_container {
-
-    
+    .nav_buttons_container {
     background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-
-
 }
 
 .nav_button {
-    background-color: transparent;
-    border: 0.5px solid transparent;
+    background-color: var(--button-bg);
+    border: var(--border-color) solid 1px;
     color: #ecf5ff;
+    border-radius: 48px;
     padding: 7px 15px;
     font-size: 14px;
     font-weight: 900;
@@ -123,7 +135,7 @@ nav.scrolled {
 }
 
 .nav_button:hover {
-    background-color: hsla(0, 0%, 100%, 0.104);
+    background-color: var(--card-hover-bg);
     border: 0.5px solid #ecf5ff;
     border-radius: 48px;
     color: #ffffff;
@@ -142,7 +154,7 @@ nav.scrolled {
 }
 
 .main_nav_text a:hover {
-    text-shadow: 0 0 25px #3c84f185;
+    text-shadow: 0 0 25px #ffffffbd;
 }
 
 
@@ -158,14 +170,14 @@ nav.scrolled {
 }
 .location {
     font-size: 10px;
-    color: #b3afaf;    
+    color: var(--text-color);   
     font-weight: light;
     margin-top: 15px;
 }
 .location_button {
     background-color: transparent;
     border: 0.5px solid transparent;
-    color: #b3afaf;
+    color: var(--text-color);
     padding: 5px 10px;
     font-size: 12px;
     font-weight: 600;
@@ -190,21 +202,22 @@ nav.scrolled {
 }
 
 .status {
-    background-color: rgba(2, 7, 7, 0.696);
+    background-color: var(--card-bg);
+    color: var(--heading-color);
     font-size: 8px;
-    border: #fdffffac solid 1.5px;
+    border: var(--border-color) solid 1px;
     padding: 15px 30px 15px 30px;
     border-radius: 80px;
 }
 
 .status p {
-    color: #ecf5ff;
+    color: var(--text-color);
     font-size: 10px;
 }
 
 .status:hover {
     transition: all 0.4s ease;
-    background-color: rgba(251, 255, 255, 0.377);
+    background-color: var(--card-hover-bg);
     border-color: #f7f9fa;
 }
 
@@ -220,7 +233,7 @@ nav.scrolled {
 }
 
 .about_section h2 {
-    color: #ecf5ff;
+    color: var(--heading-color);
     font-size: 28px;
     font-weight: bold;
     padding-top: 1px;
@@ -231,7 +244,7 @@ nav.scrolled {
     margin-bottom: 20px;
 }
 .profile_image {
-    border: #002331 solid 2px;
+    border: var(--border-color) solid 1px;
     background-color: #ecf5ff;
     width: 180px;
     border-radius: 50%;
@@ -241,24 +254,24 @@ nav.scrolled {
 
 .profile_image:hover {
     border-color: #9298a1af;
-    box-shadow: 0 0 75px #8490a2af;
+    box-shadow: 0 0 25px #8490a2af;
 }
 .status_badge {
     position: absolute;
     bottom: 6px;
-    right: -20px;
-    background-color: hsla(180, 60%, 2%, 0.946);
-    border: #fdffffac solid 1.5px;
-    padding: 8px 16px;
+    right: -18px;
+    background-color: rgba(255, 255, 255, 0.125);
+    border: var(--border-color) solid 1px;
+    padding: 9px 16px;
     border-radius: 50px;
-    color: #ecf5ff;
+    color: var(--heading-color);
     font-size: 10px;
     font-weight: 400;
     display: flex;
     align-items: center;
     gap: 6px;
     white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(118, 131, 126, 0.436);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.399);
     transition: all 0.3s ease;
     cursor: default;
 }
@@ -279,33 +292,19 @@ nav.scrolled {
     display: flex;
     flex-direction: column;
     text-align: left;
-    color: #b3afaf;
+    color: var(--text-color);
     font-size: 20px;
     line-height: 1.2;
+    cursor: default;
 }
 
 .introtext h2 {
-    color: #ecf5ff;
+    color: var(--text-color);
     font-size: 45px;
     font-weight: bold;
 }
 
-.introtext h2:hover {
 
-    transition: all 0.4s ease;
-    color: #3672ccaf;
-
-
-}
-
-.introtext p:hover {
-
-    transition: all 0.4s ease;
-    color: #1a61caaf;
-
-
-
-}
 
 #about {
     display: flex;
@@ -314,7 +313,6 @@ nav.scrolled {
     text-align: left;
     justify-content: center;
     padding: 100px 20px 100px 20px;
-    
     gap: 20px;
     width: 800px;
     margin-top: 20px;
@@ -323,14 +321,14 @@ nav.scrolled {
 }
 .aboutTitle {
     
-    color: #ecf5ff;
+    color: var(--heading-color);
     font-size: 28px;
     font-weight: 900;
     margin-bottom: 0px;
     
 }
 #about p {
-    color: #b3afaf;
+    color: var(--text-color);
     font-size: 18px;
     line-height: 1.5;
     
@@ -341,21 +339,21 @@ nav.scrolled {
     padding: 60px;
     max-width: 1000px;
     margin: 60px auto;
-    border: 1px solid rgba(60, 133, 241, 0.2);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.02);
+    background: transparent;
 }
 
 #projects h3,
 #skills h4 {
-    color: #ecf5ff;
+    color: var(--heading-color);
     font-size: 28px;
     font-weight: bold;
     padding-bottom: 20px;
 }
 
 #projects > p {
-    color: #b3afaf;
+    color: var(--text-color);
     margin-bottom: 30px;
     line-height: 1.6;
 }
@@ -369,8 +367,8 @@ nav.scrolled {
 
 .project_card {
     border-radius: 16px;
-    border: 1px solid rgba(60, 133, 241, 0.2);
-    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
     overflow: hidden;
     transition: all 0.3s ease;
     display: flex;
@@ -379,8 +377,9 @@ nav.scrolled {
 
 .project_card:hover {
     transform: translateY(-8px);
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 15px 50px rgba(255, 255, 255, 0.514);
+    background: var(--card-hover-bg);
+    border-color: #ffffff75;
+    box-shadow: 0 5px 15px var(--card-hover-bg);
 }
 
 .project_image {
@@ -402,14 +401,14 @@ nav.scrolled {
 }
 
 .project_card h4 {
-    color: #ecf5ff;
+    color: var(--heading-color);
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .project_card p {
-    color: #b3afaf;
+    color: var(--text-color);
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 20px;
@@ -420,6 +419,7 @@ nav.scrolled {
     display: flex;
     gap: 10px;
     margin-top: auto;
+    
 }
 
 .btn {
@@ -432,30 +432,31 @@ nav.scrolled {
     font-size: 13px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--border-color);
+    background-color: var(--button-bg);
 }
 
 .btn-github {
-    color: #000000;
-    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--heading-color);
+    background-color: var(--button-bg);
 }
 
 .btn-github:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: #ffffff;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    background-color: var(--button-bg-hover);
+    border-color: var(--border-color-hover);
+    
 }
 
 .btn-live {
-    color: #000000;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--heading-color);
+    background-color: var(--button-bg);
+    border-color: var(--border-color);
 }
 
 .btn-live:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: #ffffff75;
-    box-shadow: 0 0 15px rgba(60, 133, 241, 0.3);
+    background-color: var(--button-bg-hover);
+    border-color: var(--border-color-hover);
+    box-shadow: 0 0 15px var(--card-hover-bg);
 }
 #guestBook{
     display:flex;
@@ -471,27 +472,23 @@ nav.scrolled {
     max-width:380px;
 
 }
-    .guestbook-form button{
+.guestbook-form button{
     align-self:flex-end;
-
     padding:10px 18px;
-
     border:none;
     border-radius:8px;
-
-    background:#00000071;
-    color:rgb(255, 255, 255);
+    color: var(--heading-color);
 
     cursor:pointer;
 }
 #guestBook h4{
     font-size:28px;
-    color:#ecf5ff;
+    color:var(--subheading-color);
     margin-bottom:12px;
 }
 
 .guestbook-text p{
-    color:#bfc8d2;
+    color:var(--text-color);
     line-height:1.6;
 }
 .guestbook-form{
@@ -500,23 +497,24 @@ nav.scrolled {
     flex-direction:column;
     gap:12px;
     padding:20px;
-    border:1px solid rgba(255, 255, 255, 0.158);
+    border:1px solid var(--border-color);
     border-radius:12px;
-    background:rgba(0, 0, 0, 0.164);
+    background: transparent;
 }
 .guestbook-form input,
 .guestbook-form textarea{
     width:100%;
     padding:12px 14px;
-    border:1px solid rgba(255, 255, 255, 0.139);
+    border:1px solid var(--border-color);
     border-radius:8px;
     background:transparent;
-    color:#ffffffc2;
+    color: white;
     resize:none; 
 }
 
 .guestbook-form textarea{
     height:120px;   
+    
 }
 
 .guestbook-form button{
@@ -524,14 +522,14 @@ nav.scrolled {
     padding:10px 18px;
     border:none;
     border-radius:8px;
-    background:#00000071;
-    color:rgb(255, 255, 255);
+    background:var(--button-bg);
+    color:var(--heading-color);
     cursor:pointer;
 }
 .guestbook-form button:hover{
     
 
-    background:#00000039;
+    background:var(--card-hover-bg);
     color:rgb(255, 255, 255);
 
     
@@ -545,8 +543,23 @@ footer {
     bottom: 0;
     border-top: #ffffff7f solid 0.5px;
 }
+#form-status{
+    margin-top:12px;
+    font-size:14px;
+    text-align:center;
+    opacity:0;
+    transition:opacity .3s ease;
+    min-height:20px;
+}
 
-.main_nav_text {
-    font-size: 24px;
-    font-weight: bold;
+#form-status.show{
+    opacity:1;
+}
+
+#form-status.success{
+    color:#34c759;
+}
+
+#form-status.error{
+    color:#ff4d4d;
 }
