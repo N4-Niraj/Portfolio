@@ -224,8 +224,14 @@ nav.scrolled {
     color: var(--text-color);
     font-size: 10px;
 }
-#quick_info{
+.status,
+.status p,
+.location_button,
+.social_links a,
+.linksText{
+
     font-family: var(--font-code);
+
 }
 .status:hover {
     transition: all 0.4s ease;
