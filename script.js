@@ -1,105 +1,354 @@
-const form = document.getElementById("guestbook-form");
-const status = document.getElementById("form-status");
-const button = form.querySelector("button");
+const nav = document.querySelector('nav');
 
-let lastSubmitTime = 0;
-const SUBMIT_COOLDOWN = 3000;
+window.addEventListener('scroll', () => {
 
-form.addEventListener("submit", async (e) => {
+    nav.classList.toggle(
+        'scrolled',
+        window.scrollY > 0
+    );
 
-    e.preventDefault();
+});
 
-    const now = Date.now();
 
-    if (now - lastSubmitTime < SUBMIT_COOLDOWN) {
+document.querySelectorAll('a[href^="#"]')
+.forEach(anchor => {
 
-        status.textContent =
-            "Please wait before sending another message.";
+    anchor.addEventListener('click', e => {
 
-        status.className = "error show";
+        e.preventDefault();
 
-        return;
+        const target = document.querySelector(
 
-    }
-
-    lastSubmitTime = now;
-
-    button.disabled = true;
-    button.textContent = "Sending...";
-
-    const formData = {
-
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value
-
-    };
-
-    try {
-
-        const response = await fetch(
-
-            "/.netlify/functions/send-email",
-
-            {
-
-                method: "POST",
-
-                headers: {
-
-                    "Content-Type":
-                    "application/json"
-
-                },
-
-                body: JSON.stringify(formData)
-
-            }
+            anchor.getAttribute('href')
 
         );
 
-        if (response.ok) {
+        if (target) {
 
-            status.textContent =
-                "Message sent! Thanks for stopping by!";
+            const navHeight =
+                nav.offsetHeight;
 
-            status.className =
-                "success show";
+            window.scrollTo({
 
-            form.reset();
+                top:
 
-        }
+                target.offsetTop
+                - navHeight,
 
-        else {
+                behavior: 'smooth'
 
-            status.textContent =
-                "Failed to send message.";
-
-            status.className =
-                "error show";
+            });
 
         }
 
-    }
-
-    catch {
-
-        status.textContent =
-            "Network error.";
-
-        status.className =
-            "error show";
-
-    }
-
-    button.disabled = false;
-
-    button.textContent = "Send";
-
-    setTimeout(() => {
-
-        status.classList.remove("show");
-
-    }, 3000);
+    });
 
 });
+
+
+
+const form =
+document.getElementById(
+    "guestbook-form"
+);
+
+const status =
+document.getElementById(
+    "form-status"
+);
+
+const button =
+form.querySelector(
+    "button"
+);
+
+
+
+let lastSubmitTime = 0;
+
+const SUBMIT_COOLDOWN =
+15000;
+
+
+
+form.addEventListener(
+
+    "submit",
+
+    async (e) => {
+
+        e.preventDefault();
+
+        const now =
+        Date.now();
+
+
+
+        if (
+
+            now - lastSubmitTime
+
+            <
+
+            SUBMIT_COOLDOWN
+
+        ) {
+
+            status.textContent =
+
+            "Please wait before sending another message.";
+
+            status.className =
+
+            "error show";
+
+            setTimeout(() => {
+
+                status.classList.remove(
+
+                    "show"
+
+                );
+
+            }, 3000);
+
+            return;
+
+        }
+
+
+
+        const formData = {
+
+            name:
+
+            form.name.value.trim(),
+
+            email:
+
+            form.email.value.trim(),
+
+            message:
+
+            form.message.value.trim()
+
+        };
+
+
+
+        if (
+
+            !formData.name
+
+        ) {
+
+            status.textContent =
+
+            "Please enter your name.";
+
+            status.className =
+
+            "error show";
+
+            return;
+
+        }
+
+
+
+        if (
+
+            !formData.message
+
+        ) {
+
+            status.textContent =
+
+            "Please enter a message.";
+
+            status.className =
+
+            "error show";
+
+            return;
+
+        }
+
+
+
+        if (
+
+            formData.message.length
+
+            >
+
+            1000
+
+        ) {
+
+            status.textContent =
+
+            "Message too long.";
+
+            status.className =
+
+            "error show";
+
+            return;
+
+        }
+
+
+
+        button.disabled = true;
+
+        button.textContent =
+
+        "Sending...";
+
+
+
+        try {
+
+            const response =
+
+            await fetch(
+
+                "/.netlify/functions/send-email",
+
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+
+                        "application/json"
+
+                    },
+
+                    body:
+
+                    JSON.stringify(
+
+                        formData
+
+                    )
+
+                }
+
+            );
+
+
+
+            const data =
+
+            await response.json();
+
+
+
+            if (
+
+                response.ok
+
+            ) {
+
+                lastSubmitTime =
+
+                Date.now();
+
+
+
+                status.textContent =
+
+                "Message sent! Thanks for stopping by!";
+
+
+
+                status.className =
+
+                "success show";
+
+
+
+                form.reset();
+
+            }
+
+            else {
+
+                status.textContent =
+
+                data.error ||
+
+                "Failed to send message.";
+
+
+
+                status.className =
+
+                "error show";
+
+            }
+
+        }
+
+        catch {
+
+            status.textContent =
+
+            "Network error.";
+
+
+
+            status.className =
+
+            "error show";
+
+        }
+
+
+
+        button.disabled = false;
+
+        button.textContent =
+
+        "Send";
+
+
+
+        setTimeout(() => {
+
+            status.classList.remove(
+
+                "show"
+
+            );
+
+        }, 3000);
+
+    }
+
+);
+
+
+
+
+document.querySelector(
+
+    ".profile_image"
+
+)
+
+.addEventListener(
+
+    "contextmenu",
+
+    e => {
+
+        e.preventDefault();
+
+    }
+
+);
