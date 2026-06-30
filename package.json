@@ -1,0 +1,23 @@
+{
+  "name": "protfolio",
+  "version": "1.0.0",
+  "description": "Protfolio .......\r  this is my protfolio website made using html and css...",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N4-Niraj/Protfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/N4-Niraj/Protfolio/issues"
+  },
+  "homepage": "https://github.com/N4-Niraj/Protfolio#readme",
+  "dependencies": {
+    "nodemailer": "^9.0.3"
+  }
+}
