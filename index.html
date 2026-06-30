@@ -4,8 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta property="og:title" content="Niraj Bhusal">
+    <meta property="og:description" content="Portfolio website">
+    
+    <meta property="og:type" content="website">
+    <title>Niraj Bhusal • Portfolio</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -65,7 +76,7 @@
                 <div id="quick_info">
                     <div class="status">
                         <p>
-                            Student | ActiveLearner | Tech Enthusiast
+                            Student • Active Learner • Technology Enthusiast
 
                         </p>
                     </div>
@@ -134,7 +145,7 @@
             <div class="project_card">
                 <div class="project_image" style="background-image: url('./images/ProJect2.png')"></div>
                 <div class="project_content">
-                    <h4>Protfolio</h4>
+                    <h4>Portfolio</h4>
                     <p>A personal portfolio website showcasing my projects, skills, and journey as a student and tech
                         enthusiast.</p>
                     <div class="project_buttons">
@@ -158,7 +169,7 @@
         <h4>Skills</h4>
         <p>A collection of technologies I have explored, practiced, and continue to learn through hands-on projects..
         </p>
-        
+
         <div class="skills_buttons">
             <button class="skill_button familiar">HTML</button>
             <button class="skill_button familiar">CSS</button>
@@ -166,12 +177,12 @@
             <button class="skill_button familiar">C</button>
             <button class="skill_button skill_learning">JavaScript</button>
             <button class="skill_button skill_learning">Python</button>
-            <button class="skill_button skill_learning">tailwind</button>
+            <button class="skill_button skill_learning">Tailwind CSS</button>
         </div>
         <div class="skillIndicator">
             <span class="indicator familiar-dot"></span>
             <p>Familiar</p>
-            
+
             <span class="indicator learning-dot"></span>
             <p>Learning</p>
         </div>
@@ -189,7 +200,8 @@
         <form class="guestbook-form" id="guestbook-form">
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email">
-            <textarea name="message" placeholder="Your message" maxlength="500"></textarea>
+            <textarea name="message" placeholder="Leave feedback, suggestions, or say hello"
+                maxlength="1000"></textarea>
             <button>Submit</button>
             <p id="form-status"></p>
         </form>
@@ -198,13 +210,16 @@
 
 
     <footer>
-        <p> 2026 Niraj's Website. All rights reserved.</p>
+        <p>© 2026 Niraj Bhusal</p>
+        <span class="footer-rt">
+            &lt;/&gt;
+        </span>
     </footer>
 
 
     </div>
 
-    
+
     <script src="script.js"></script>
 </body>
 
