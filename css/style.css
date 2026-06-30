@@ -626,6 +626,33 @@ footer {
 #form-status.error{
     color:#ff4d4d;
 }
+@media (max-width: 768px) {
+    #guestBook {
+        flex-direction: column;
+        gap: 30px;
+        padding: 60px 20px;
+    }
+    
+    .guestbook-form {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .intro_text_image {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .introo {
+        padding: 0px 20px 30px 20px;
+    }
+}
+.guestbook-form input:focus,
+.guestbook-form textarea:focus {
+    outline: none;
+    border-color: #ecf5ff;
+    box-shadow: 0 0 10px rgba(236, 245, 255, 0.3);
+}
 html {
     scrollbar-width: none;
 }
