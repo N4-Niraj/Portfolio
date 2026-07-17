@@ -1,5 +1,5 @@
 const nodemailer =
-require("nodemailer");
+    require("nodemailer");
 exports.handler = async (event) => {
 
     if (
@@ -9,11 +9,11 @@ exports.handler = async (event) => {
         return {
             statusCode: 405,
             body:
-            JSON.stringify({
-                error:
-                "Method not allowed"
+                JSON.stringify({
+                    error:
+                        "Method not allowed"
 
-            })
+                })
         };
     }
     try {
@@ -23,9 +23,9 @@ exports.handler = async (event) => {
             email,
             message
         }
-        = JSON.parse(
-            event.body
-        );
+            = JSON.parse(
+                event.body
+            );
 
         if (
             !name ||
@@ -35,37 +35,37 @@ exports.handler = async (event) => {
             return {
                 statusCode: 400,
                 body:
-                JSON.stringify({
-                    error:
-                    "Missing required fields"
-                })
+                    JSON.stringify({
+                        error:
+                            "Missing required fields"
+                    })
             };
         }
-
+        
         const transporter =
-        nodemailer.createTransport({
-            service:
-            "gmail",
-            auth: {
-                user:
-                process.env.GMAIL_USER,
-                pass:
-                process.env.GMAIL_PASSWORD
-            }
-        });
+            nodemailer.createTransport({
+                service:
+                    "gmail",
+                auth: {
+                    user:
+                        process.env.GMAIL_USER,
+                    pass:
+                        process.env.GMAIL_PASSWORD
+                }
+            });
 
         await transporter.sendMail({
             from:
-            process.env.GMAIL_USER,
+                process.env.GMAIL_USER,
 
             to:
-            process.env.GMAIL_USER,
+                process.env.GMAIL_USER,
             subject:
-            `Portfolio Message from ${name}`,
+                `Portfolio Message from ${name}`,
 
             html:
 
-            `
+                `
             <h2>New Message</h2>
             <p>
             <strong>Name:</strong>
@@ -87,24 +87,23 @@ exports.handler = async (event) => {
             </p>
             `
         });
-    
+
         return {
             statusCode: 200,
             body:
-            JSON.stringify({
-                success: true
-            })
+                JSON.stringify({
+                    success: true
+                })
         };
     }
-catch (err) {
-    console.log("EMAIL ERROR:", err);
+    catch (err) {
+    console.error("EMAIL ERROR:", err);
 
     return {
         statusCode: 500,
-        body:
-        JSON.stringify({
-            error:
-            err.message
+        body: JSON.stringify({
+            error: "Failed to send email"
         })
     };
+}
 }
